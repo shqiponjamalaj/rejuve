@@ -1,0 +1,1747 @@
+@import "fonts";
+@import "style";
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+body{
+  background: $whiteColor;
+  color: $lightBlackColor;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.btn-theme{
+  @include proNovaBold();
+  font-size: 13px;
+  font-weight: normal;
+  background: $themeColor!important;
+  border: 2px solid darken($themeColor, 1.5%)!important;
+  text-align: center;
+  text-transform: uppercase;
+  color: $whiteColor!important;
+  line-height: 1rem;
+  border-radius: 2rem!important;
+  &:hover, &:focus{
+    text-decoration: none!important;
+    background: lighten($themeColor, 2.5%)!important;
+    border: 2px solid lighten($themeColor, 2.5%)!important;
+    text-align: center;
+  }
+}
+.btn-outline-theme{
+  @include proNovaBold();
+  font-size: 13px;
+  font-weight: normal;
+  background: transparent!important;
+  border: 2px solid $whiteColor!important;
+  text-align: center;
+  text-transform: uppercase;
+  color: $whiteColor!important;
+  line-height: 1rem;
+  border-radius: 2rem!important;
+  &:hover, &:focus{
+    text-decoration: none!important;
+    background: $themeColor!important;
+    border: 2px solid lighten($themeColor, 2.5%)!important;
+    text-align: center;
+  }
+}
+
+.navbar{
+  .nav-item{
+    text-align: center;
+    .nav-link{
+      @include proNovaBold();
+      font-size: 13px;
+      color: $whiteColor!important;
+      text-transform: uppercase;
+      line-height: 1.7;
+      min-width: 6rem!important;
+    }
+    &:hover, &:focus, &:active{
+      background: $themeColor!important;
+      color: $whiteColor;
+      border-radius: 1rem;
+    }
+  }
+  .nav-item.active{
+    background: $themeColor!important;
+    color: $whiteColor;
+    border-radius: 1rem;
+  }
+  .navbar-toggler{
+    color: $whiteColor!important;
+    .fa{
+      border-radius: 50%;
+      border: 2px solid $whiteColor;
+      padding: .5rem;
+    }
+  }
+  .dropdown-menu{
+    background: $themeColor;
+    color: $blackColor;
+    font-family: $proNovaBold;
+    .dropdown-item{
+      @include proNovaBold();
+      background: $themeColor;
+      font-size: 13px;
+      color: $whiteColor!important;
+      text-transform: uppercase;
+      line-height: 1.7;
+      &:hover, &:active, &:focus{
+        color: $themeColor!important;
+        background: $whiteColor;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+.fixed-top{
+  background: $whiteColor!important;
+  .nav-item{
+    .nav-link{
+      color: $themeColor!important;
+      &:hover, &:focus, &:active{
+        color: $whiteColor!important;
+      }
+    }
+  }
+}
+
+#rejuve-header{
+  position: relative;
+  background: url("../images/banner.png") 100% 100% no-repeat;
+  background-size: cover!important;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .54);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(md){
+    position: relative;
+    background: url("../images/banner.png") center center no-repeat;
+    background-size: cover!important;
+    color: $whiteColor!important;
+    z-index: 999;
+    &:before{
+      content: '';
+      background: rgba($blackColor, .42);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+  }
+  .banner-content{
+    padding-top: 12.5%;
+    padding-bottom: 2.5%;
+    vertical-align: middle !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    .row{
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      text-align: center!important;
+      .header-title{
+        @include proNovaThin();
+        font-size: 66px;
+      }
+      h4{
+        @include proNovaBold();
+        font-size: 1rem;
+        text-align: center;
+        color: $whiteColor;
+      }
+      p{
+        font-size: 1rem;
+        @include proNovaRegular();
+      }
+      .btn{
+        @include proNovaBold();
+        font-size: 13px;
+      }
+      #card-group{
+        padding-top: 5%;
+        .col-card{
+          padding: 1.75rem;
+          text-align: center;
+          -ms-flex-item-align: center !important;
+          align-self: center !important;
+          border-color: $whiteColor!important;
+          background: transparent!important;
+          @include media-breakpoint-below(xs){
+            padding: 1.5rem .5rem!important;
+          }
+          .fa{
+            font-size: 2rem;
+          }
+        }
+        .col-card:not(:last-child){
+          border-left: 0;
+          border-bottom: 0;
+          border-top: 0;
+          border-right: 1px solid $whiteColor;
+        }
+        .col-card:last-child{
+          border: 0;
+        }
+        .cardTitle{
+          @include proNovaRegular();
+          text-align: center;
+          font-size: 1.25rem;
+        }
+      }
+      @include media-breakpoint-below(md){
+        .header-title{
+          font-size: 2rem;
+        }
+        span.d-block{
+          padding-top: 1.75rem;
+          z-index: 999;
+        }
+        #card-group{
+          content: '';
+          position: fixed;
+          bottom: 0;
+          background: $themeColor;
+          padding-top: 0;
+          .col-card{
+            font-family: $fontFamily;
+            font-size: 1.25rem;
+            font-weight: 400;
+            .card-body{
+              padding: .25rem;
+            }
+            .cardTitle{
+              @include proNovaRegular();
+              text-align: center;
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+#health-next-level{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: $fontFamily;
+  .row{
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    text-align: center!important;
+    .next-level-title{
+      @include proNovaLight();
+      font-size: 46px;
+      text-align: center;
+      color: $blackColor;
+      @include media-breakpoint-below(xs){
+        font-size: 40px!important;
+      }
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 1rem;
+      color: $grayColor;
+      line-height: 22px;
+    }
+    .btn{
+      @include proNovaBold();
+      font-size: 13px;
+      text-align: center;
+      line-height: 1rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+#how-it-work{
+  background: $lightWhiteColor;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  font-family: $fontFamily;
+  .hiw-title{
+    @include proNovaLight();
+    font-size: 42px;
+    color: $blackColor;
+    padding-top: .75rem;
+    text-transform: capitalize;
+    &:before{
+      content: '';
+      position: absolute;
+      background: $themeColor;
+      height: 2px;
+      width: 5rem;
+      top: 0;
+    }
+  }
+  .col-md-3{
+    @include media-breakpoint-below(md){
+      padding-left: 2rem;
+      .step{
+        margin-left: -1rem;
+      }
+      .font-awesome{
+        padding-top: 0!important;
+        .icons{
+          width: 2rem;
+        }
+      }
+      p, h4{
+        padding-left: 1rem;
+      }
+    }
+    h4{
+      @include proNovaRegular();
+      font-size: 1.5rem;
+      color: $blackColor;
+      line-height: 26px;
+    }
+    p{
+      @include proNovaRegular();
+      size: 1rem;
+      color: $darkGray;
+      line-height: 22px;
+    }
+    .font-awesome{
+      padding-top: 1.75rem;
+      @media screen and (max-width: 767px){
+        padding-left: 1.125rem;
+      }
+    }
+    .fa{
+      color: $themeColor!important;
+    }
+  }
+  .steps{
+    &:before{
+      content: '';
+      position: absolute;
+      background: $lightGray;
+      height: 2px;
+      width: 100%;
+      left: 2.75rem;
+      right: 0;
+      top: .5rem;
+      z-index: 0;
+      @include media-breakpoint-below(md){
+        width: 2px;
+        height: 100%;
+        left: 1.75rem;
+        top: 1.75rem;
+      }
+    }
+  }
+  .step{
+    background: $lightWhiteColor;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: $fontFamily;
+    border: 2px solid $lightGray;
+    color: $lightGray;
+    border-radius: 50%;
+    padding: .25rem .5rem;
+    @include media-breakpoint-below(md){
+      position: absolute!important;
+    }
+  }
+}
+
+#rejuve-treatment{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  .col-md-6{
+    text-align: center;
+    font-family: $fontFamily;
+    padding-bottom: .75rem;
+    .rt-title{
+      @include proNovaLight();
+      font-size: 46px;
+      text-align: center;
+      color: $blackColor;
+      @include media-breakpoint-below(xs){
+        font-size: 42px!important;
+      }
+    }
+    .normal-p{
+      font-size: 1rem;
+      color: $grayColor;
+    }
+  }
+  .col-md{
+    text-align: center!important;
+    .rounded-circle{
+      height: 132px !important;
+      width: 132px !important;
+    }
+    p{
+      padding-top: .75rem;
+      @include proNovaRegular();
+      font-size: 18px;
+      color: $blackColor;
+      text-align: center;
+    }
+  }
+}
+
+#membershipLoyalty{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: url("../images/about.png");
+  background-size: cover;
+  color: $whiteColor;
+  @include media-breakpoint-below(md){
+    background: url("../images/about.png") right;
+    background-size: inherit;
+  }
+  .col-md-6{
+    .membershipTitle{
+      @include proNovaLight();
+      color: $whiteColor;
+      line-height: 43px;
+      font-size: 42px!important;
+      @include media-breakpoint-below(xs){
+        font-size: 36px!important;
+      }
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+    .membership-highlight{
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      border-top: 1px solid rgba($whiteColor, .2);
+      border-bottom: 1px solid $whiteColor;
+    }
+    .small-fonts{
+      @include proNovaRegular();
+      font-size: 14px;
+      line-height: 22px;
+      padding-top: 1.25rem;
+    }
+    .list-item{
+      @include proNovaRegular();
+      &:before{
+        content: '__';
+        bottom: .25rem;
+        color: $whiteColor;
+        font-size: .75rem;
+        padding-right: .25rem;
+      }
+    }
+  }
+}
+
+#review{
+  position: relative;
+  background: url("../images/review-bg.png") 100% 50% $whiteColor no-repeat;
+  background-size: 50% 100%;
+  background-position-x: left;
+  z-index: 0;
+  &:before{
+    content: '';
+    position: absolute;
+    background: url("../images/review-john-doe.png") center no-repeat;
+    background-size: cover;
+    left: 49.96%;
+    right: 0;
+    top: 50%;
+    bottom: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(md){
+    position: relative;
+    background: $whiteColor;
+    background-size: 50% 100%;
+    background-position-x: left;
+    z-index: 0;
+    &:before{
+      content: '';
+      position: absolute;
+      background: url("../images/review-john-doe.png");
+      background-size: cover;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+    .blockquote{
+      font-size: 1.75rem!important;
+    }
+    .blockquote-footer{
+      font-size: 1.25rem!important;
+    }
+    #video{
+      width: 100%;
+      .video-player{
+        padding-top: calc(25% - 2rem);
+      }
+      .video-play{
+        font-size: 2.5rem;
+        color: $whiteColor;
+        border-radius: 50%;
+        background: $themeColor;
+        height: 3.75rem;
+        width: 3.75rem;
+      }
+    }
+  }
+  blockquote{
+    @include media-breakpoint-below(md){
+      padding: 10% 0;
+      text-align: center;
+    }
+    @include media-breakpoint-above(sm){
+      padding: 10% 15%;
+      text-align: left!important;
+    }
+    @include proNovaLight();
+    text-align: left!important;
+    font-size: 34px;
+    line-height: 42px;
+    color: $blackColor;
+    .blockquote-footer{
+      @include proNovaBold();
+      background: transparent;
+      text-align: left;
+      font-size: 14px;
+      line-height: 26px;
+      text-transform: uppercase;
+      color: $themeColor;
+    }
+  }
+  #video{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    .video-player{
+      text-align: center!important;
+      .video-play{
+        .fa{
+          font-size: 2.5rem;
+          color: $whiteColor;
+          border-radius: 50%;
+          background: $themeColor;
+          padding: .75rem 1.25rem;
+          height: 3.75rem;
+          width: 3.75rem;
+        }
+      }
+    }
+  }
+}
+
+#appointment{
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  &:before{
+    content: '';
+    background: url("../images/appointment-bg.png") 100% 100% no-repeat;
+    background-size: contain;
+    right: 20%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    @include media-breakpoint-below(md){
+      content: '';
+      background: url("../images/appointment-bg.png") no-repeat;
+      background-size: contain;
+      background-position-x: right;
+      height: 150px;
+      right: 16%;
+      top: 56%;
+      position: absolute;
+      z-index: 1;
+    }
+}
+  #book-appointment{
+    position: relative;
+    background: darken($lightWhiteColor, .01%);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-family: $fontFamily;
+    .col-md-8{
+      z-index: 998;
+    }
+    .apo-title{
+      @include proNovaLight();
+      font-size: 42px;
+      padding-top: 1rem;
+      &:before{
+        content: '';
+        position: absolute;
+        background: $themeColor;
+        height: 2px;
+        width: 5rem;
+        top: 0;
+      }
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 1rem;
+      color: $darkGray;
+    }
+  }
+  @include media-breakpoint-below(md){
+    position: relative;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    #book-appointment{
+      .apo-title{
+        font-size: 24px;
+        font-family: $fontFamily;
+        padding-top: .75rem;
+        font-weight: 100;
+        &:before{
+          content: '';
+          position: absolute;
+          background: $themeColor;
+          height: 2px;
+          width: 5rem;
+          top: 0;
+        }
+      }
+      .btn{
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+#contact{
+  position: relative;
+  background: $themeColor url("../images/map-bg.png") no-repeat;
+  background-size: 50% 100%;
+  background-position-X: right;
+  z-index: 0;
+  @include media-breakpoint-below(md){
+    background: $themeColor url("../images/map-bg.png") no-repeat;
+    background-size: 100% 50%;
+    -ms-background-position-y: bottom;
+    background-position-y: bottom;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    background: rgba($lightBlackColor, .4);
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 0;
+    @include media-breakpoint-below(md){
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      z-index: 0;
+    }
+  }
+  .col-md-6{
+    color: $whiteColor;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+    font-family: $fontFamily;
+    font-weight: 400;
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+    z-index: 999;
+    h2{
+      @include proNovaLight();
+      text-align: center;
+      font-size: 46px;
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 1rem;
+      text-align: center;
+      color: $whiteColor;
+    }
+    h5{
+      @include proNovaRegular();
+      text-align: center;
+      color: $whiteColor;
+      font-size: 18px;
+    }
+    form{
+      background: transparent!important;
+      .form-control, .input-group-text{
+        background: transparent!important;
+        color: $whiteColor;
+        border-color: $whiteColor;
+        font-size: 13px;
+        @include proNovaRegular();
+        text-transform: uppercase;
+        &:focus{
+          border-color: $whiteColor;
+          -webkit-box-shadow: inset 0 0 .01rem  #000 !important;
+          -moz-box-shadow: inset 0 0 .01rem  #000 !important;
+          box-shadow: inset 0 0 .01rem  #000 !important;
+        }
+      }
+      .input-group-prepend{
+        border-color: $whiteColor;
+        .fa{
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+        .input-group-text{
+          border-right: inherit;
+          border-top-left-radius: 2rem;
+          border-bottom-left-radius: 2rem;
+          padding-left: 2rem;
+        }
+      }
+      .input-group-append{
+        border-color: $whiteColor;
+        .input-group-text{
+          border-left: inherit;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+          padding-right: 2rem;
+        }
+      }
+      .form-control{
+        border-left: inherit;
+        border-right: inherit;
+      }
+
+      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-size: 13px;
+        text-transform: uppercase;
+        color: $whiteColor;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        font-size: 13px;
+        text-transform: uppercase;
+        color: $whiteColor;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        font-size: 13px;
+        text-transform: uppercase;
+        color: $whiteColor;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        font-size: 13px;
+        text-transform: uppercase;
+        color: $whiteColor;
+      }
+    }
+  }
+}
+
+#connect-with-us{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: $fontFamily;
+  text-align: center;
+  .col-md-3{
+    border: inherit;
+    list-style: none;
+    .fa{
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: $themeColor;
+    }
+  }
+  h1{
+    @include proNovaLight();
+    font-size: 46px;
+    text-align: center;
+    color: $blackColor;
+  }
+  p{
+    @include proNovaRegular();
+    color: $grayColor;
+    font-size: 1rem;
+    padding-bottom: 1.75rem;
+    @include media-breakpoint-below(xs){
+      font-size: 1rem;
+    }
+  }
+  img{
+    height: 42px;
+    padding-bottom: .5rem;
+  }
+  .social-link-name{
+    @include proNovaRegular();
+    color: $blackColor;
+    font-size: 18px;
+  }
+}
+
+footer{
+  padding-top: 5%;
+  background: darken($lightWhiteColor, .01%);
+  font-family: $fontFamily;
+  text-align: center;
+  .container:first-child{
+    padding-bottom: .75%;
+    border-bottom: 2px solid $grayColor;
+  }
+  .container:last-child{
+    padding-top: .75%;
+    padding-bottom: .75%;
+  }
+  .menu-link{
+    @include proNovaBold();
+    font-size: 13px;
+    line-height: 1;
+    color: $blackColor;
+    text-decoration: none;
+    padding: 1.25rem .75rem;
+    text-transform: uppercase;
+    &:hover, &:focus{
+      color: $themeColor;
+      text-decoration: none;
+    }
+  }
+  .copyright{
+    @include proNovaSemiBold();
+    font-size: 13px;
+    text-align: center;
+    line-height: 1rem;
+    color: $blackColor;
+    .divider{
+      padding-left: .5rem;
+      padding-right: .5rem;
+      font-weight: 500;
+      font-size: 1.125rem;
+    }
+  }
+
+}
+.mobile-footer{
+  @include media-breakpoint-below(md){
+    padding-bottom: 3rem;
+  }
+}
+#pages-header{
+  .about-content{
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .navbar{
+    background: $themeColor;
+  }
+  .main-title{
+    font-family: $fontFamily;
+    padding-top: .75rem;
+    font-weight: 500;
+    &:before{
+      content: '';
+      position: absolute;
+      background: $themeColor;
+      height: 2px;
+      width: 5rem;
+      top: .5rem;
+    }
+  }
+  .main-list{
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid darken($whiteColor, 5%);
+  }
+  .main-service{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: $themeColor;
+    font-weight: 400;
+    font-family: $fontFamily;
+  }
+  .sub-list{
+    font-family: $fontFamily;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  .sub-list-group{
+    li{
+      padding-bottom: .75rem;
+      line-height: 1.2;
+    }
+  }
+}
+#ourTreatment-header{
+  position: relative;
+  background: url("../images/our-treatment-bg.png") center no-repeat;
+  background-size: cover!important;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .34);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(sm){
+    position: relative;
+    background: url("../images/our-treatment-bg.png") center no-repeat;
+    background-size: cover!important;
+    color: $whiteColor!important;
+    z-index: 999;
+    &:before{
+      content: '';
+      background: rgba($blackColor, .04);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+  }
+  .banner-content{
+    padding-top: 12.5%;
+    padding-bottom: 12.5%;
+    vertical-align: middle !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    .row{
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      text-align: center!important;
+      .header-title{
+        @include proNovaThin();
+        font-size: 66px;
+      }
+      h4{
+        @include proNovaBold();
+        font-size: 1rem;
+        text-align: center;
+        color: $whiteColor;
+      }
+      p{
+        font-size: 1rem;
+        @include proNovaRegular();
+      }
+      .btn{
+        @include proNovaBold();
+        font-size: 13px;
+      }
+      #card-group{
+        padding-top: 5%;
+        .col-card{
+          border-color: $whiteColor!important;
+          background: transparent!important;
+          .fa{
+            font-size: 2rem;
+          }
+        }
+        .col-card:not(:last-child){
+          border-left: 0;
+          border-bottom: 0;
+          border-top: 0;
+          border-right: 1px solid $whiteColor;
+        }
+        .col-card:last-child{
+          border: 0;
+        }
+        .cardTitle{
+          @include proNovaRegular();
+          text-align: center;
+          font-size: 1.25rem;
+        }
+      }
+      @include media-breakpoint-below(md){
+        .header-title{
+          font-size: 2rem;
+        }
+        .chevron{
+          color: $whiteColor!important;
+          font-size: 2rem;
+          font-weight: 400;
+          z-index: 999;
+        }
+        #card-group{
+          content: '';
+          position: fixed;
+          bottom: 0;
+          background: $themeColor;
+          padding-top: 0;
+          .col-card{
+            padding-top: .75rem;
+            font-family: $fontFamily;
+            font-size: 1.25rem;
+            font-weight: 400;
+            .card-body{
+              padding: .25rem;
+            }
+            .cardTitle{
+              @include proNovaRegular();
+              text-align: center;
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+#treatmentDetails{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  .col-md-8{
+    padding-bottom: 2.75rem;
+    h1{
+      @include proNovaLight();
+      font-size: 46px;
+      text-align: center;
+      line-height: 43px;
+      color: $blackColor;
+      @include media-breakpoint-below(xs){
+        font-size: 40px!important;
+      }
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 1rem;
+      text-align: center;
+      color: $grayColor;
+    }
+  }
+  .col-md-4{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-below(sm){
+      margin-top: .25rem;
+      margin-bottom: .25rem;
+      padding: .75rem 2.5rem;
+    }
+    .treatment-card{
+      background: $lightWhiteColor;
+      text-align: center;
+      padding: .75rem 1rem;
+    }
+    img{
+      padding-bottom: .75rem;
+    }
+    h3{
+      @include proNovaLight();
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      color: $blackColor;
+    }
+    .price{
+      @include proNovaBold();
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      color: $themeColor;
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: $darkGray;
+    }
+    .btn{
+      font-family: $fontFamily!important;
+    }
+  }
+}
+#beauty-header{
+  position: relative;
+  background: url("../images/beauty-bg.png") no-repeat;
+  background-size: cover;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .54);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(sm){
+    position: relative;
+    background: url("../images/beauty-bg.png") center no-repeat;
+    background-size: cover;
+    color: $whiteColor!important;
+    z-index: 999;
+    &:before{
+      content: '';
+      background: rgba($blackColor, .54);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+    img.icon{
+      display: none!important;
+    }
+  }
+  .banner-content{
+    padding-top: 10%;
+    vertical-align: middle !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    .row{
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      text-align: center!important;
+      img{
+        background: $whiteColor;
+        border-radius: 50%;
+        margin-bottom: 1.75rem;
+      }
+      .header-title{
+        @include proNovaThin();
+        font-size: 54px;
+      }
+      h4{
+        @include proNovaBold();
+        font-size: 1rem;
+        text-align: center;
+        color: $whiteColor;
+      }
+      p{
+        font-size: 1rem;
+        @include proNovaRegular();
+      }
+      .btn{
+        @include proNovaBold();
+        font-size: 13px;
+      }
+      #card-group{
+        padding-top: 5%;
+        .col-card{
+          border-color: $whiteColor!important;
+          background: transparent!important;
+          .fa{
+            font-size: 2rem;
+          }
+        }
+        .col-card:not(:last-child){
+          border-left: 0;
+          border-bottom: 0;
+          border-top: 0;
+          border-right: 1px solid $whiteColor;
+        }
+        .col-card:last-child{
+          border: 0;
+        }
+        .cardTitle{
+          @include proNovaRegular();
+          text-align: center;
+          font-size: 1.25rem;
+        }
+      }
+      @include media-breakpoint-below(md){
+        .header-title{
+          font-size: 2rem;
+        }
+        .chevron{
+          color: $whiteColor!important;
+          font-size: 2rem;
+          font-weight: 400;
+          z-index: 999;
+        }
+        #card-group{
+          content: '';
+          position: fixed;
+          bottom: 0;
+          background: $themeColor;
+          padding-top: 0;
+          .col-card{
+            padding-top: .75rem;
+            font-family: $fontFamily;
+            font-size: 1.25rem;
+            font-weight: 400;
+            .card-body{
+              padding: .25rem;
+            }
+            .cardTitle{
+              @include proNovaRegular();
+              text-align: center;
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .btn-beauty{
+    margin-bottom: -26px;
+  }
+}
+#beautyDetails{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  @include media-breakpoint-below(xs){
+    padding-top: 12.5%;
+  }
+  .price{
+    @include proNovaBold();
+    font-size: 26px;
+    line-height: 35px;
+    color: $themeColor;
+    @include media-breakpoint-below(sm){
+      text-align: center!important;
+    }
+  }
+  h4{
+    @include proNovaLight();
+    font-size: 1.25rem;
+    color: $blackColor;
+    line-height: 43px;
+  }
+  li{
+    @include proNovaRegular();
+    font-size: 14px;
+    color: $grayColor;
+    line-height: 22px;
+    margin-bottom: .75rem;
+  }
+  @include media-breakpoint-below(sm){
+    img{
+      padding-left: 1.75rem;
+    }
+  }
+}
+
+#ivt-header{
+  position: relative;
+  background: url("../images/iv-therapy-bg.png") center no-repeat;
+  background-size: cover;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .54);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(sm){
+    position: relative;
+    background: url("../images/iv-therapy-bg.png") 54% no-repeat;
+    background-size: cover;
+    color: $whiteColor!important;
+    z-index: 999;
+    &:before{
+      content: '';
+      background: rgba($blackColor, .54);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .banner-content{
+      padding-top: 5%!important;
+      .icon{
+        height: 72px!important;
+        width: 72px!important;
+        margin-bottom: .75rem!important;
+      }
+      .header-title{
+        padding-bottom: .5rem!important;
+      }
+    }
+  }
+  .banner-content{
+    padding-top: 10%;
+    vertical-align: middle !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    .row{
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      text-align: center!important;
+      img{
+        background: $whiteColor;
+        border-radius: 50%;
+        margin-bottom: 1.75rem;
+      }
+      .header-title{
+        @include proNovaThin();
+        font-size: 54px;
+      }
+      h4{
+        @include proNovaBold();
+        font-size: 1rem;
+        text-align: center;
+        color: $whiteColor;
+      }
+      p{
+        font-size: 1rem;
+        @include proNovaRegular();
+      }
+      .btn{
+        @include proNovaBold();
+        font-size: 13px;
+      }
+      #card-group{
+        padding-top: 5%;
+        .col-card{
+          border-color: $whiteColor!important;
+          background: transparent!important;
+          .fa{
+            font-size: 2rem;
+          }
+        }
+        .col-card:not(:last-child){
+          border-left: 0;
+          border-bottom: 0;
+          border-top: 0;
+          border-right: 1px solid $whiteColor;
+        }
+        .col-card:last-child{
+          border: 0;
+        }
+        .cardTitle{
+          @include proNovaRegular();
+          text-align: center;
+          font-size: 1.25rem;
+        }
+      }
+      @include media-breakpoint-below(md){
+        .header-title{
+          font-size: 2rem;
+        }
+        .chevron{
+          color: $whiteColor!important;
+          font-size: 2rem;
+          font-weight: 400;
+          z-index: 999;
+        }
+        #card-group{
+          content: '';
+          position: fixed;
+          bottom: 0;
+          background: $themeColor;
+          padding-top: 0;
+          .col-card{
+            padding-top: .75rem;
+            font-family: $fontFamily;
+            font-size: 1.25rem;
+            font-weight: 400;
+            .card-body{
+              padding: .25rem;
+            }
+            .cardTitle{
+              @include proNovaRegular();
+              text-align: center;
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .btn-beauty{
+    margin-bottom: -26px;
+  }
+}
+#ivt-details{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  @include media-breakpoint-below(xs){
+    padding-top: 12.5%;
+  }
+  .col-md-4{
+    text-align: center!important;
+    padding: 2rem 1rem;
+    h3{
+      @include proNovaLight();
+      font-size: 1.25rem;
+      text-align: center;
+      line-height: 26px;
+      color: $blackColor;
+    }
+    h4{
+      @include proNovaBold();
+      font-size: 14px;
+      color: $blackColor;
+      line-height: 1rem;
+      text-align: center;
+    }
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    color: $grayColor;
+    line-height: 22px;
+    margin-bottom: .75rem;
+    span{
+      color: $themeColor;
+    }
+  }
+  .price{
+    @include proNovaBold();
+    font-size: 22px;
+    line-height: 26px;
+    color: $themeColor;
+    text-align: center;
+    @include media-breakpoint-below(sm){
+      text-align: center!important;
+    }
+  }
+  @include media-breakpoint-below(sm){
+    img{
+      padding-left: 1.75rem;
+    }
+  }
+  hr{
+    border: .5px solid $lightGray;
+  }
+  h3{
+    @include proNovaLight();
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 43px;
+    color: $blackColor;
+  }
+
+}
+
+
+#about-header{
+  position: relative;
+  background: url("../images/about-bg.png") 100% no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .54);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  @include media-breakpoint-below(sm){
+    &:before{
+      content: '';
+      background: url("../images/about-bg.png") 60% 100% no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: -42%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .banner-content{
+      padding-top: 5%!important;
+      .icon{
+        height: 72px!important;
+        width: 72px!important;
+        margin-bottom: .75rem!important;
+      }
+      .header-title{
+        padding-bottom: .5rem!important;
+      }
+    }
+  }
+  .banner-content{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    vertical-align: middle !important;
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    .row{
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      text-align: center!important;
+      .header-title{
+        @include proNovaThin();
+        font-size: 54px;
+        line-height: 64px;
+        text-align: center;
+      }
+      @include media-breakpoint-below(md){
+        .header-title{
+          font-size: 2rem;
+        }
+      }
+    }
+
+  }
+}
+#about-description{
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  &:before{
+    content: '';
+    background: url("../images/about-us.png") right no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 65%;
+    width: 35%;
+    height: 100%;
+    z-index: 1;
+  }
+  h1{
+    @include proNovaLight();
+    font-size: 46px;
+    line-height: 43px;
+    color: $blackColor;
+    padding-bottom: 2rem;
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    line-height: 22px;
+    color: $grayColor;
+  }
+  @include media-breakpoint-below(xs){
+    text-align: center!important;
+    &:before{
+      content: '';
+      background: url("../images/about-us.png") 50% 100% no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 0;
+      top: 64%;
+      width: 100%;
+      height: 380px;
+      z-index: 0;
+      left: 0;
+    }
+  }
+  .mobile-bg{
+    display: block;
+    height: 360px;
+    width: 100%;
+  }
+}
+#mission-description{
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: $themeColor;
+  text-align: center;
+  color: $whiteColor;
+  h1{
+    @include proNovaLight();
+    font-size: 46px;
+    line-height: 43px;
+    color: $whiteColor;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    line-height: 22px;
+    color: $whiteColor;
+  }
+}
+#membership-header{
+  position: relative;
+  background: url("../images/membership-bg.jpg") 100% no-repeat;
+  background-size: cover;
+  color: $whiteColor!important;
+  z-index: 999;
+  &:before{
+    content: '';
+    background: rgba($blackColor, .54);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .banner-content{
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    .header-title{
+      @include proNovaThin();
+      font-size: 66px;
+      line-height: 64px;
+      text-align: center;
+      color: $whiteColor;
+    }
+  }
+  @include media-breakpoint-below(sm){
+    .banner-content{
+      padding-top: 12.5%;
+      padding-bottom: 12.5%;
+      .header-title{
+        @include proNovaThin();
+        font-size: 42px;
+        line-height: 44px;
+        text-align: center;
+        color: $whiteColor;
+      }
+    }
+  }
+}
+#monthly-membership{
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  h1{
+    @include proNovaLight();
+    font-size: 46px;
+    line-height: 43px;
+    text-align: center;
+    color: $blackColor;
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    line-height: 22px;
+    text-align: center;
+    color: $grayColor;
+  }
+  .card-header{
+    @include proNovaLight();
+    font-size: 1.25rem;
+    line-height: 26px;
+    text-align: center;
+    background: $whiteColor;
+  }
+  .card-body{
+    h5{
+      @include proNovaThin();
+      font-size: 42px;
+      line-height: 50px;
+      text-align: center;
+      color: $themeColor;
+      span{
+        @include proNovaMedium();
+        font-size: 14px;
+      }
+    }
+    h4{
+      @include proNovaBold();
+      font-size: 14px;
+      line-height: 1rem;
+      text-align: center;
+      color: $blackColor;
+      text-transform: uppercase;
+    }
+    p{
+      @include proNovaRegular();
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: $grayColor;
+    }
+    .terms{
+      @include proNovaRegular();
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: $grayColor;
+    }
+  }
+  .col-md-4{
+    margin-bottom: 2rem;
+  }
+  @include media-breakpoint-below(sm){
+    h1{
+      padding-top: 7.5%;
+    }
+  }
+}
+#ready-to-join{
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
+  background: $themeColor;
+  h1{
+    @include proNovaLight();
+    font-size: 46px;
+    line-height: 43px;
+    text-align: center;
+    color: $whiteColor;
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    line-height: 22px;
+    text-align: center;
+    color: $whiteColor;
+  }
+  .contact{
+    @include proNovaBold();
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: $whiteColor;
+  }
+}
+
+.modal-content{
+  padding: 7.5%;
+  .modal-body{
+    border: 1.5px solid $grayColor;
+  }
+  h1{
+    @include proNovaLight();
+    font-size: 38px;
+    line-height: 43px;
+    color: $blackColor;
+    &:before{
+      content: "";
+      position: absolute;
+      background: $themeColor;
+      height: 2px;
+      width: 75%;
+      top: 3rem;
+      @include media-breakpoint-below(xs){
+        width: 65%!important;
+      }
+    }
+  }
+  h5{
+    @include proNovaBold();
+    line-height: 1rem;
+    font-size: 14px;
+    color: $blackColor;
+  }
+  p{
+    @include proNovaRegular();
+    font-size: 1rem;
+    line-height: 22px;
+    color: $grayColor;
+  }
+}
